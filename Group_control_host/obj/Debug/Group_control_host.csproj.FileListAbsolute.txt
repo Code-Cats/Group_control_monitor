@@ -1,0 +1,9 @@
+E:\毕业设计\上位机\Group_control_host\Group_control_host\Group_control_host\bin\Debug\Group_control_host.exe.config
+E:\毕业设计\上位机\Group_control_host\Group_control_host\Group_control_host\bin\Debug\Group_control_host.exe
+E:\毕业设计\上位机\Group_control_host\Group_control_host\Group_control_host\bin\Debug\Group_control_host.pdb
+E:\毕业设计\上位机\Group_control_host\Group_control_host\Group_control_host\obj\Debug\Group_control_host.csprojResolveAssemblyReference.cache
+E:\毕业设计\上位机\Group_control_host\Group_control_host\Group_control_host\obj\Debug\Group_control_host.Form1.resources
+E:\毕业设计\上位机\Group_control_host\Group_control_host\Group_control_host\obj\Debug\Group_control_host.Properties.Resources.resources
+E:\毕业设计\上位机\Group_control_host\Group_control_host\Group_control_host\obj\Debug\Group_control_host.csproj.GenerateResource.Cache
+E:\毕业设计\上位机\Group_control_host\Group_control_host\Group_control_host\obj\Debug\Group_control_host.exe
+E:\毕业设计\上位机\Group_control_host\Group_control_host\Group_control_host\obj\Debug\Group_control_host.pdb
