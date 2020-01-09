@@ -166,7 +166,17 @@ namespace Group_control_host
         /// <param name="e"></param>
         private void btnOpenSerial_Click(object sender, EventArgs e)
         {
-            if (!OpenSerial("COM4", 115200, 8, 1, 0))
+            int comNum = 4;
+            int boudNum = 115200;
+            int parityNum = 0;
+            if (!int.TryParse(textBoxPortName.Text.ToString(), out comNum) ||
+                !int.TryParse(textBoxBaudRate.Text.ToString(), out boudNum) ||
+                !int.TryParse(textBoxParity.Text.ToString(), out parityNum)|| parityNum>2)
+                {
+                    MessageBox.Show("串口参数设置错误！");
+            }
+            
+            if (!OpenSerial("COM"+ comNum.ToString(), boudNum, 8, 1, parityNum))
             {
                 //串口打开失败
                 MessageBox.Show("串口打开失败！");
@@ -694,7 +704,7 @@ namespace Group_control_host
             {
                 sendMsgArray[0] = 0x5A;
                 sendMsgArray[1] = 0x00;
-                sendMsgArray[2] = (Byte)msgSendRovotIndex;
+                sendMsgArray[2] = (byte)(msgSendRovotIndex+1);
                 sendMsgArray[3] = (Byte)(commonVx >> 8);
                 sendMsgArray[4] = (Byte)(commonVx);
                 sendMsgArray[5] = (Byte)(commonVy >> 8);
@@ -747,7 +757,7 @@ namespace Group_control_host
 
         private void pictureBox_Left_MouseDown(object sender, MouseEventArgs e)
         {
-            commonVy = 50;
+            commonVy = -50;
         }
 
         private void pictureBox_Left_MouseUp(object sender, MouseEventArgs e)
@@ -757,7 +767,7 @@ namespace Group_control_host
 
         private void pictureBox_Right_MouseDown(object sender, MouseEventArgs e)
         {
-            commonVy = -50;
+            commonVy = 50;
         }
 
         private void pictureBox_Right_MouseUp(object sender, MouseEventArgs e)
@@ -783,6 +793,30 @@ namespace Group_control_host
         private void pictureBox_Anticlockwise_MouseUp(object sender, MouseEventArgs e)
         {
             commonVw = 0;
+        }
+
+        private void textBoxPortName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 8 && !Char.IsDigit(e.KeyChar))//如果不是输入数字就不让输入
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxBaudRate_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 8 && !Char.IsDigit(e.KeyChar))//如果不是输入数字就不让输入
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxParity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 8 && !Char.IsDigit(e.KeyChar))//如果不是输入数字就不让输入
+            {
+                e.Handled = true;
+            }
         }
     }//Form end
 }

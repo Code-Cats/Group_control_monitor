@@ -98,6 +98,10 @@
             this.labelVxShow = new System.Windows.Forms.Label();
             this.labelVyShow = new System.Windows.Forms.Label();
             this.labelVwShow = new System.Windows.Forms.Label();
+            this.textBoxBaudRate = new System.Windows.Forms.TextBox();
+            this.textBoxPortName = new System.Windows.Forms.TextBox();
+            this.textBoxParity = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.tabControl_Main.SuspendLayout();
             this.tabPage_chart.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -729,6 +733,10 @@
             // CurveOptions_panel
             // 
             this.CurveOptions_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.CurveOptions_panel.Controls.Add(this.label12);
+            this.CurveOptions_panel.Controls.Add(this.textBoxParity);
+            this.CurveOptions_panel.Controls.Add(this.textBoxPortName);
+            this.CurveOptions_panel.Controls.Add(this.textBoxBaudRate);
             this.CurveOptions_panel.Controls.Add(this.label7);
             this.CurveOptions_panel.Controls.Add(this.textBoxSendData);
             this.CurveOptions_panel.Controls.Add(this.label_inform);
@@ -1063,6 +1071,49 @@
             this.labelVwShow.TabIndex = 45;
             this.labelVwShow.Text = "sendVw:0";
             // 
+            // textBoxBaudRate
+            // 
+            this.textBoxBaudRate.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBoxBaudRate.Location = new System.Drawing.Point(98, 46);
+            this.textBoxBaudRate.Name = "textBoxBaudRate";
+            this.textBoxBaudRate.Size = new System.Drawing.Size(70, 27);
+            this.textBoxBaudRate.TabIndex = 35;
+            this.textBoxBaudRate.Text = "115200";
+            this.textBoxBaudRate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxBaudRate_KeyPress);
+            // 
+            // textBoxPortName
+            // 
+            this.textBoxPortName.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBoxPortName.Location = new System.Drawing.Point(59, 46);
+            this.textBoxPortName.Name = "textBoxPortName";
+            this.textBoxPortName.Size = new System.Drawing.Size(33, 27);
+            this.textBoxPortName.TabIndex = 36;
+            this.textBoxPortName.Text = "4";
+            this.textBoxPortName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPortName_KeyPress);
+            // 
+            // textBoxParity
+            // 
+            this.textBoxParity.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBoxParity.Location = new System.Drawing.Point(174, 46);
+            this.textBoxParity.Name = "textBoxParity";
+            this.textBoxParity.Size = new System.Drawing.Size(19, 27);
+            this.textBoxParity.TabIndex = 37;
+            this.textBoxParity.Text = "0";
+            this.textBoxParity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxParity_KeyPress);
+            // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.label12.Font = new System.Drawing.Font("华文新魏", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(180)))), ((int)(((byte)(145)))));
+            this.label12.Location = new System.Drawing.Point(4, 51);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(50, 23);
+            this.label12.TabIndex = 46;
+            this.label12.Text = "COM:";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -1174,6 +1225,10 @@
         private System.Windows.Forms.Label labelVwShow;
         private System.Windows.Forms.Label labelVyShow;
         private System.Windows.Forms.Label labelVxShow;
+        private System.Windows.Forms.TextBox textBoxPortName;
+        private System.Windows.Forms.TextBox textBoxBaudRate;
+        private System.Windows.Forms.TextBox textBoxParity;
+        private System.Windows.Forms.Label label12;
     }
 }
 
