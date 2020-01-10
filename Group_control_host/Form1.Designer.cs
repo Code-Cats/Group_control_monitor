@@ -1146,6 +1146,8 @@
             this.Name = "Form1";
             this.Text = "Group control";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             this.tabControl_Main.ResumeLayout(false);
             this.tabPage_chart.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

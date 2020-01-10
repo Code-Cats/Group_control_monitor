@@ -706,6 +706,37 @@ namespace Group_control_host
         Byte[] sendMsgArray = new Byte[9];
         private void timer_MsgSend_Tick(object sender, EventArgs e)
         {
+            if (IsKeyDown(Keys.W))//前
+            {
+                commonVx = MOTION_SPEED + 1000;
+            }
+            else if(IsKeyDown(Keys.S))
+            {
+                commonVx = -MOTION_SPEED + 1000;
+            }
+            else
+            {
+                //commonVx = 1000;//回中放在UP事件中
+            }
+
+            if (IsKeyDown(Keys.D))//右
+            {
+                commonVy = MOTION_SPEED + 1000;
+            }
+            else if (IsKeyDown(Keys.A))
+            {
+                commonVy = -MOTION_SPEED + 1000;
+            }
+
+            if (IsKeyDown(Keys.NumPad6)|| IsKeyDown(Keys.E))//顺  //D6是一排数字键，NumPad6是小键盘区6
+            {
+                commonVw = MOTION_SPEED + 1000;
+            }
+            else if (IsKeyDown(Keys.NumPad4)|| IsKeyDown(Keys.Q))
+            {
+                commonVw = -MOTION_SPEED + 1000;
+            }
+
             if (RobotInfo[(int)msgSendRovotIndex].On_line_state==ROBOT_State.On_line_controlled)
             {
                 sendMsgArray[0] = 0x5A;
@@ -731,15 +762,15 @@ namespace Group_control_host
         /// <summary>
         /// 受控机器的公共Vx
         /// </summary>
-        public short commonVx = 0;
+        public short commonVx = 1000;
         /// <summary>
         /// 受控机器的公共Vy
         /// </summary>
-        public short commonVy = 0;
+        public short commonVy = 1000;
         /// <summary>
         /// 受控机器的公共Vw
         /// </summary>
-        public short commonVw = 0;
+        public short commonVw = 1000;
 
         private void pictureBox_Front_MouseDown(object sender, MouseEventArgs e)
         {
@@ -824,6 +855,53 @@ namespace Group_control_host
                 e.Handled = true;
             }
         }
+        private const int MOTION_SPEED = 50;    //定义的移动速度
+        static List<Keys> keys = new List<Keys>();//键盘键列表，用于控制移动
+        /// <summary>
+        /// 按下键盘键记录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!keys.Contains(e.KeyCode))
+            {
+                keys.Add(e.KeyCode);
+            }
+        }
+
+        /// <summary>
+        /// 松开键盘键记录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            keys.Remove(e.KeyCode);
+            if (e.KeyCode==Keys.W|| e.KeyCode == Keys.S)
+            {
+                commonVx = 1000;//回中放在UP事件中
+            }
+            if (e.KeyCode == Keys.A || e.KeyCode == Keys.D)
+            {
+                commonVy = 1000;//回中放在UP事件中
+            }
+            if (e.KeyCode == Keys.NumPad4 || e.KeyCode == Keys.NumPad6|| e.KeyCode == Keys.Q|| e.KeyCode == Keys.E)
+            {
+                commonVw = 1000;//回中放在UP事件中
+            }
+        }
+
+        /// <summary>
+        /// 判断按键是否被按下
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns>是则返回true  不是则返回false</returns>
+        public static bool IsKeyDown(Keys key)
+        {
+            return keys.Contains(key);
+        }
+
 
     }//Form end
 }
