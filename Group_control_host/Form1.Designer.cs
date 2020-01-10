@@ -102,6 +102,7 @@
             this.textBoxPortName = new System.Windows.Forms.TextBox();
             this.textBoxParity = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.labelKeyboardControl = new System.Windows.Forms.Label();
             this.tabControl_Main.SuspendLayout();
             this.tabPage_chart.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -154,6 +155,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.panel2.Controls.Add(this.labelKeyboardControl);
             this.panel2.Controls.Add(this.labelVwShow);
             this.panel2.Controls.Add(this.labelVyShow);
             this.panel2.Controls.Add(this.labelVxShow);
@@ -387,9 +389,9 @@
             this.label_FPS.Location = new System.Drawing.Point(72, 12);
             this.label_FPS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_FPS.Name = "label_FPS";
-            this.label_FPS.Size = new System.Drawing.Size(48, 16);
+            this.label_FPS.Size = new System.Drawing.Size(57, 16);
             this.label_FPS.TabIndex = 26;
-            this.label_FPS.Text = "FPS: 0";
+            this.label_FPS.Text = "FPS: 25";
             // 
             // btn_connect_panel
             // 
@@ -597,7 +599,7 @@
             this.btnRobot5State.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRobot5State.Font = new System.Drawing.Font("微软雅黑", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnRobot5State.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
-            this.btnRobot5State.Location = new System.Drawing.Point(552, 26);
+            this.btnRobot5State.Location = new System.Drawing.Point(553, 26);
             this.btnRobot5State.Margin = new System.Windows.Forms.Padding(2);
             this.btnRobot5State.Name = "btnRobot5State";
             this.btnRobot5State.Size = new System.Drawing.Size(130, 50);
@@ -629,7 +631,7 @@
             this.btnRobot11State.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRobot11State.Font = new System.Drawing.Font("微软雅黑", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnRobot11State.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
-            this.btnRobot11State.Location = new System.Drawing.Point(552, 82);
+            this.btnRobot11State.Location = new System.Drawing.Point(553, 82);
             this.btnRobot11State.Margin = new System.Windows.Forms.Padding(2);
             this.btnRobot11State.Name = "btnRobot11State";
             this.btnRobot11State.Size = new System.Drawing.Size(130, 50);
@@ -645,7 +647,7 @@
             this.btnRobot4State.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRobot4State.Font = new System.Drawing.Font("微软雅黑", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnRobot4State.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
-            this.btnRobot4State.Location = new System.Drawing.Point(418, 26);
+            this.btnRobot4State.Location = new System.Drawing.Point(417, 26);
             this.btnRobot4State.Margin = new System.Windows.Forms.Padding(2);
             this.btnRobot4State.Name = "btnRobot4State";
             this.btnRobot4State.Size = new System.Drawing.Size(130, 50);
@@ -677,7 +679,7 @@
             this.btnRobot10State.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRobot10State.Font = new System.Drawing.Font("微软雅黑", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnRobot10State.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
-            this.btnRobot10State.Location = new System.Drawing.Point(418, 82);
+            this.btnRobot10State.Location = new System.Drawing.Point(417, 82);
             this.btnRobot10State.Margin = new System.Windows.Forms.Padding(2);
             this.btnRobot10State.Name = "btnRobot10State";
             this.btnRobot10State.Size = new System.Drawing.Size(130, 50);
@@ -772,7 +774,7 @@
             this.textBoxSendData.Name = "textBoxSendData";
             this.textBoxSendData.Size = new System.Drawing.Size(242, 75);
             this.textBoxSendData.TabIndex = 33;
-            this.textBoxSendData.Text = "5A A5";
+            this.textBoxSendData.Text = "C0 96 18 38 01 40";
             // 
             // label_inform
             // 
@@ -1114,6 +1116,22 @@
             this.label12.Text = "COM:";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // labelKeyboardControl
+            // 
+            this.labelKeyboardControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.labelKeyboardControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelKeyboardControl.Enabled = false;
+            this.labelKeyboardControl.Font = new System.Drawing.Font("华文新魏", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelKeyboardControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(180)))), ((int)(((byte)(145)))));
+            this.labelKeyboardControl.Location = new System.Drawing.Point(723, 111);
+            this.labelKeyboardControl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelKeyboardControl.Name = "labelKeyboardControl";
+            this.labelKeyboardControl.Size = new System.Drawing.Size(136, 148);
+            this.labelKeyboardControl.TabIndex = 47;
+            this.labelKeyboardControl.Text = "键盘控制请移至此区域";
+            this.labelKeyboardControl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelKeyboardControl.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -1123,6 +1141,7 @@
             this.Controls.Add(this.tabControl_Main);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Group control";
@@ -1229,6 +1248,7 @@
         private System.Windows.Forms.TextBox textBoxBaudRate;
         private System.Windows.Forms.TextBox textBoxParity;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label labelKeyboardControl;
     }
 }
 

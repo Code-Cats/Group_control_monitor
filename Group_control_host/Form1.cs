@@ -221,6 +221,8 @@ namespace Group_control_host
                     pictureBox_Clockwise.Visible = false;
                     pictureBox_Anticlockwise.Enabled = false;
                     pictureBox_Anticlockwise.Visible = false;
+                    labelKeyboardControl.Enabled = false;    //键盘控制区域
+                    labelKeyboardControl.Visible = false;    //键盘控制区域
                     labelMotionState.Text = labelMotionState.Text.Split(':')[0] + ":off";
                     timer_MsgSend.Enabled = false;
                 }
@@ -673,6 +675,8 @@ namespace Group_control_host
                 pictureBox_Clockwise.Visible = true;
                 pictureBox_Anticlockwise.Enabled = true;
                 pictureBox_Anticlockwise.Visible = true;
+                labelKeyboardControl.Enabled = true;    //键盘控制区域
+                labelKeyboardControl.Visible = true;    //键盘控制区域
                 labelMotionState.Text = labelMotionState.Text.Split(':')[0] + ":on";
                 timer_MsgSend.Enabled = true;
 
@@ -691,6 +695,8 @@ namespace Group_control_host
                 pictureBox_Clockwise.Visible = false;
                 pictureBox_Anticlockwise.Enabled = false;
                 pictureBox_Anticlockwise.Visible = false;
+                labelKeyboardControl.Enabled = false;    //键盘控制区域
+                labelKeyboardControl.Visible = false;    //键盘控制区域
                 labelMotionState.Text = labelMotionState.Text.Split(':')[0] + ":off";
                 timer_MsgSend.Enabled = false;
             }
@@ -737,62 +743,62 @@ namespace Group_control_host
 
         private void pictureBox_Front_MouseDown(object sender, MouseEventArgs e)
         {
-            commonVx = 50;
+            commonVx = 50 + 1000;
         }
 
         private void pictureBox_Front_MouseUp(object sender, MouseEventArgs e)
         {
-            commonVx = 0;
+            commonVx = 0 + 1000;
         }
 
         private void pictureBox_back_MouseDown(object sender, MouseEventArgs e)
         {
-            commonVx = -50;
+            commonVx = -50 + 1000;
         }
 
         private void pictureBox_back_MouseUp(object sender, MouseEventArgs e)
         {
-            commonVx = 0;
+            commonVx = 0 + 1000;
         }
 
         private void pictureBox_Left_MouseDown(object sender, MouseEventArgs e)
         {
-            commonVy = -50;
+            commonVy = -50 + 1000;
         }
 
         private void pictureBox_Left_MouseUp(object sender, MouseEventArgs e)
         {
-            commonVy = 0;
+            commonVy = 0 + 1000;
         }
 
         private void pictureBox_Right_MouseDown(object sender, MouseEventArgs e)
         {
-            commonVy = 50;
+            commonVy = 50 + 1000;
         }
 
         private void pictureBox_Right_MouseUp(object sender, MouseEventArgs e)
         {
-            commonVy = 0;
+            commonVy = 0 + 1000;
         }
 
         private void pictureBox_Clockwise_MouseDown(object sender, MouseEventArgs e)
         {
-            commonVw = 50;
+            commonVw = 50 + 1000;
         }
 
         private void pictureBox_Clockwise_MouseUp(object sender, MouseEventArgs e)
         {
-            commonVw = 0;
+            commonVw = 0 + 1000;
         }
 
         private void pictureBox_Anticlockwise_MouseDown(object sender, MouseEventArgs e)
         {
-            commonVw = -50;
+            commonVw = -50 + 1000;
         }
 
         private void pictureBox_Anticlockwise_MouseUp(object sender, MouseEventArgs e)
         {
-            commonVw = 0;
+            commonVw = 0 + 1000;
         }
 
         private void textBoxPortName_KeyPress(object sender, KeyPressEventArgs e)
@@ -818,5 +824,6 @@ namespace Group_control_host
                 e.Handled = true;
             }
         }
+
     }//Form end
 }
